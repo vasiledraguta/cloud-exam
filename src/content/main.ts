@@ -1,6 +1,7 @@
 import { generateWithGoogle, isGoogleConfigured } from "./providers/google";
 import { generateWithOpenAI, isOpenAIConfigured } from "./providers/openai";
 import { SYSTEM_PROMPT, buildPrompt } from "./prompts";
+import "./style.css";
 
 type Provider = "openai" | "google";
 
@@ -22,61 +23,6 @@ async function getProvider(): Promise<Provider | null> {
       }
     });
   });
-}
-
-function injectStyles(): void {
-  if (document.querySelector("#cloud-exam-styles")) return;
-
-  const style = document.createElement("style");
-  style.id = "cloud-exam-styles";
-  style.textContent = `
-    .cloud-exam-answer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      max-width: 400px;
-      padding: 16px;
-      background: rgba(0, 0, 0, 0.9);
-      color: #fff;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 1.5;
-      z-index: 999999;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      animation: cloud-exam-fade-in 0.2s ease-out;
-    }
-    .cloud-exam-answer.hidden {
-      display: none;
-    }
-    @keyframes cloud-exam-fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .cloud-exam-loading {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .cloud-exam-loading::before {
-      content: "";
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: cloud-exam-spin 0.8s linear infinite;
-    }
-    @keyframes cloud-exam-spin {
-      to { transform: rotate(360deg); }
-    }
-  `;
-  document.head.appendChild(style);
 }
 
 function getSelectionText(): string {
@@ -134,8 +80,6 @@ async function generateAnswer(text: string): Promise<string> {
     return "Error: Could not get answer";
   }
 }
-
-injectStyles();
 
 document.addEventListener("keydown", async (event) => {
   if (event.key === "k" && (event.ctrlKey || event.metaKey)) {

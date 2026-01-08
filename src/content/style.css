@@ -1,0 +1,63 @@
+.cloud-exam-answer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 400px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(50, 50, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  z-index: 999999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: cloud-exam-fade-in 0.15s ease-out;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.cloud-exam-answer:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(30, 30, 30, 0.85);
+}
+
+.cloud-exam-answer.hidden {
+  display: none;
+}
+
+@keyframes cloud-exam-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cloud-exam-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cloud-exam-loading::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid rgba(50, 50, 50, 0.2);
+  border-top-color: rgba(50, 50, 50, 0.6);
+  border-radius: 50%;
+  animation: cloud-exam-spin 0.8s linear infinite;
+}
+
+@keyframes cloud-exam-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
