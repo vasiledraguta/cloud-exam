@@ -23,6 +23,7 @@
     "vite-plugin-zip-pack": "^1.2.4"
   },
   "dependencies": {
-    "@ai-sdk/google": "^3.0.6"
+    "@ai-sdk/google": "^3.0.6",
+    "dotenv": "^17.2.3"
   }
 }
