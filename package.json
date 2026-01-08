@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.6",
+    "@ai-sdk/openai": "^3.0.7",
     "ai": "^6.0.23",
     "dotenv": "^17.2.3"
   }

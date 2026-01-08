@@ -20,5 +20,5 @@ export default defineManifest({
       matches: ["https://*/*"],
     },
   ],
-  permissions: ["contentSettings"],
+  permissions: ["storage"],
 });
