@@ -84,8 +84,14 @@ function getSelectionText(): string {
 }
 
 let answerBox: HTMLDivElement | null = null;
+let hideTimeout: ReturnType<typeof setTimeout> | null = null;
 
 function showAnswer(content: string, isLoading = false): void {
+  if (hideTimeout) {
+    clearTimeout(hideTimeout);
+    hideTimeout = null;
+  }
+
   if (!answerBox) {
     answerBox = document.createElement("div");
     answerBox.className = "cloud-exam-answer";
@@ -98,11 +104,10 @@ function showAnswer(content: string, isLoading = false): void {
     answerBox.innerHTML = `<div class="cloud-exam-loading">Thinking...</div>`;
   } else {
     answerBox.textContent = content;
+    hideTimeout = setTimeout(() => {
+      answerBox?.classList.add("hidden");
+    }, 10000);
   }
-
-  setTimeout(() => {
-    answerBox?.classList.add("hidden");
-  }, 10000);
 }
 
 function hideAnswer(): void {
@@ -135,8 +140,6 @@ injectStyles();
 document.addEventListener("keydown", async (event) => {
   if (event.key === "k" && (event.ctrlKey || event.metaKey)) {
     event.preventDefault();
-
-    console.log("provider", await getProvider());
 
     const text = getSelectionText();
     if (!text) {
