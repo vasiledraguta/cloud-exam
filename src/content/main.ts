@@ -1,6 +1,6 @@
 import { generateWithGoogle, isGoogleConfigured } from "./providers/google";
 import { generateWithOpenAI, isOpenAIConfigured } from "./providers/openai";
-import { SYSTEM_PROMPT, buildPrompt } from "./prompts";
+import { PROMPTS, PromptMode, buildPrompt } from "./prompts";
 import "./style.css";
 
 type Provider = "openai" | "google";
@@ -21,6 +21,14 @@ async function getProvider(): Promise<Provider | null> {
       } else {
         resolve(null);
       }
+    });
+  });
+}
+
+async function getPromptMode(): Promise<PromptMode> {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get("promptMode", (result) => {
+      resolve((result.promptMode as PromptMode) || "general");
     });
   });
 }
@@ -62,18 +70,20 @@ function hideAnswer(): void {
 
 async function generateAnswer(text: string): Promise<string> {
   const provider = await getProvider();
+  const promptMode = await getPromptMode();
 
   if (!provider) {
     return "No API key configured. Set VITE_OPENAI_API_KEY or VITE_GOOGLE_AI_API_KEY in .env";
   }
 
   const prompt = buildPrompt(text);
+  const systemPrompt = PROMPTS[promptMode];
 
   try {
     if (provider === "openai") {
-      return await generateWithOpenAI(prompt, SYSTEM_PROMPT);
+      return await generateWithOpenAI(prompt, systemPrompt);
     } else {
-      return await generateWithGoogle(prompt, SYSTEM_PROMPT);
+      return await generateWithGoogle(prompt, systemPrompt);
     }
   } catch (error) {
     console.error("[cloud-exam] AI error:", error);

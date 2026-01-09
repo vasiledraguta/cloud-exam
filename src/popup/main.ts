@@ -1,17 +1,26 @@
 import "./style.css";
 
 type Provider = "openai" | "google";
+type PromptMode = "aws" | "general";
 
 const app = document.querySelector("#app")!;
 
 app.innerHTML = `
   <h1>Cloud Exam</h1>
   
-  <div class="provider-group">
-    <span class="provider-label">AI Provider</span>
-    <div class="provider-options">
-      <button class="provider-btn" data-provider="openai">OpenAI</button>
-      <button class="provider-btn" data-provider="google">Google</button>
+  <div class="setting-group">
+    <span class="setting-label">Prompt Mode</span>
+    <div class="setting-options">
+      <button class="setting-btn" data-prompt="aws">AWS Exam</button>
+      <button class="setting-btn" data-prompt="general">General Cloud</button>
+    </div>
+  </div>
+  
+  <div class="setting-group">
+    <span class="setting-label">AI Provider</span>
+    <div class="setting-options">
+      <button class="setting-btn" data-provider="openai">OpenAI</button>
+      <button class="setting-btn" data-provider="google">Google</button>
     </div>
   </div>
   
@@ -23,17 +32,27 @@ app.innerHTML = `
   <div class="status" id="status"></div>
 `;
 
-const buttons = app.querySelectorAll<HTMLButtonElement>(".provider-btn");
+const promptButtons = app.querySelectorAll<HTMLButtonElement>("[data-prompt]");
+const providerButtons =
+  app.querySelectorAll<HTMLButtonElement>("[data-provider]");
 const status = app.querySelector<HTMLDivElement>("#status")!;
 
-chrome.storage.sync.get("provider", (result) => {
-  const saved = (result.provider as Provider) || "openai";
-  setActiveProvider(saved);
+chrome.storage.sync.get(["provider", "promptMode"], (result) => {
+  const savedProvider = (result.provider as Provider) || "openai";
+  const savedPromptMode = (result.promptMode as PromptMode) || "general";
+  setActiveProvider(savedProvider);
+  setActivePromptMode(savedPromptMode);
 });
 
 function setActiveProvider(provider: Provider): void {
-  buttons.forEach((btn) => {
+  providerButtons.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.provider === provider);
+  });
+}
+
+function setActivePromptMode(mode: PromptMode): void {
+  promptButtons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.prompt === mode);
   });
 }
 
@@ -45,12 +64,25 @@ function showStatus(message: string, isSuccess = false): void {
   }, 2000);
 }
 
-buttons.forEach((btn) => {
+providerButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const provider = btn.dataset.provider as Provider;
     chrome.storage.sync.set({ provider }, () => {
       setActiveProvider(provider);
       showStatus(`Using ${provider === "openai" ? "OpenAI" : "Google"}`, true);
+    });
+  });
+});
+
+promptButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const mode = btn.dataset.prompt as PromptMode;
+    chrome.storage.sync.set({ promptMode: mode }, () => {
+      setActivePromptMode(mode);
+      showStatus(
+        `Using ${mode === "aws" ? "AWS Exam" : "General Cloud"} mode`,
+        true
+      );
     });
   });
 });
