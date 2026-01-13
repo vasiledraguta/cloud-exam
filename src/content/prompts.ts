@@ -1,4 +1,16 @@
 export type PromptMode = "aws" | "general" | "caseStudy";
+export type Provider = "openai" | "google";
+
+export const MODE_LABELS: Record<PromptMode, string> = {
+  aws: "AWS Exam",
+  general: "General Cloud",
+  caseStudy: "Case Study",
+};
+
+export const PROVIDER_LABELS: Record<Provider, string> = {
+  openai: "OpenAI",
+  google: "Google",
+};
 
 export const AWS_EXAM_PROMPT = `You are an AWS Solutions Architect expert helping with a cloud computing lab exam.
 
@@ -104,21 +116,14 @@ export const CASE_STUDY_PROMPT = `You are a university student taking a cloud co
 Write a single, coherent answer text (not bullet points) that explains an AWS architecture solution for the given case study.
 
 The answer should:
+- Sound human and natural, like a good student, not marketing or documentation
+- Be clear but concise, around 1–2 short paragraphs
+- Explain what services are used and why, focusing on trade-offs
+- Prioritize low operational overhead, cost efficiency, and scalability
+- Use correct AWS service names, but avoid listing every feature
+- Avoid buzzwords unless they clearly support the explanation
 
-Sound human and natural, like a good student, not marketing or documentation
-
-Be clear but concise, around 1–2 short paragraphs
-
-Explain what services are used and why, focusing on trade-offs
-
-Prioritize low operational overhead, cost efficiency, and scalability
-
-Use correct AWS service names, but avoid listing every feature
-
-Avoid buzzwords unless they clearly support the explanation
-
-Assume the grader values understanding and reasoning, not memorization.
-`;
+Assume the grader values understanding and reasoning, not memorization.`;
 
 export const PROMPTS: Record<PromptMode, string> = {
   aws: AWS_EXAM_PROMPT,

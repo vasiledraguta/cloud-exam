@@ -3,12 +3,13 @@ import { generateWithOpenAI, isOpenAIConfigured } from "./providers/openai";
 import {
   PROMPTS,
   PromptMode,
+  Provider,
   buildPrompt,
   buildCaseStudyPrompt,
 } from "./prompts";
 import "./style.css";
 
-type Provider = "openai" | "google";
+const ANSWER_DISPLAY_TIMEOUT = 10000;
 
 async function getProvider(): Promise<Provider | null> {
   return new Promise((resolve) => {
@@ -65,7 +66,7 @@ function showAnswer(content: string, isLoading = false): void {
     answerBox.textContent = content;
     hideTimeout = setTimeout(() => {
       answerBox?.classList.add("hidden");
-    }, 10000);
+    }, ANSWER_DISPLAY_TIMEOUT);
   }
 }
 
@@ -73,9 +74,11 @@ function hideAnswer(): void {
   answerBox?.classList.add("hidden");
 }
 
-async function generateAnswer(text: string): Promise<string> {
+async function generateAnswer(
+  text: string,
+  promptMode: PromptMode,
+): Promise<string> {
   const provider = await getProvider();
-  const promptMode = await getPromptMode();
 
   if (!provider) {
     return "No API key configured. Set VITE_OPENAI_API_KEY or VITE_GOOGLE_AI_API_KEY in .env";
@@ -114,17 +117,17 @@ document.addEventListener("keydown", async (event) => {
     const promptMode = await getPromptMode();
     if (promptMode === "caseStudy") {
       showAnswer("Thinking about the case study...", true);
-      const answer = await generateAnswer(text);
+      const answer = await generateAnswer(text, promptMode);
       try {
         await navigator.clipboard.writeText(answer);
-        showAnswer("Case study answer generated");
+        showAnswer("Answer copied to clipboard");
       } catch (error) {
         console.error("[cloud-exam] Error copying answer to clipboard:", error);
         showAnswer("Error: Could not copy answer to clipboard");
       }
     } else {
-      showAnswer("", true);
-      const answer = await generateAnswer(text);
+      showAnswer("Thinking...", true);
+      const answer = await generateAnswer(text, promptMode);
       showAnswer(answer);
     }
   }

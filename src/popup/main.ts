@@ -1,7 +1,10 @@
+import {
+  Provider,
+  PromptMode,
+  MODE_LABELS,
+  PROVIDER_LABELS,
+} from "../content/prompts";
 import "./style.css";
-
-type Provider = "openai" | "google";
-type PromptMode = "aws" | "general" | "caseStudy";
 
 const app = document.querySelector("#app")!;
 
@@ -70,7 +73,7 @@ providerButtons.forEach((btn) => {
     const provider = btn.dataset.provider as Provider;
     chrome.storage.sync.set({ provider }, () => {
       setActiveProvider(provider);
-      showStatus(`Using ${provider === "openai" ? "OpenAI" : "Google"}`, true);
+      showStatus(`Using ${PROVIDER_LABELS[provider]}`, true);
     });
   });
 });
@@ -80,10 +83,7 @@ promptButtons.forEach((btn) => {
     const mode = btn.dataset.prompt as PromptMode;
     chrome.storage.sync.set({ promptMode: mode }, () => {
       setActivePromptMode(mode);
-      showStatus(
-        `Using ${mode === "aws" ? "AWS Exam" : mode === "general" ? "General Cloud" : "Case Study"} mode`,
-        true
-      );
+      showStatus(`Using ${MODE_LABELS[mode]} mode`, true);
     });
   });
 });
