@@ -1,4 +1,4 @@
-export type PromptMode = "aws" | "general";
+export type PromptMode = "aws" | "general" | "caseStudy";
 
 export const AWS_EXAM_PROMPT = `You are an AWS Solutions Architect expert helping with a cloud computing lab exam.
 
@@ -100,9 +100,30 @@ RESPONSE RULES
 - If multiple answers are correct, separate with commas (e.g., "A, C, D")
 - Be concise - no explanations`;
 
+export const CASE_STUDY_PROMPT = `You are a university student taking a cloud computing / cloud architecture exam.
+Write a single, coherent answer text (not bullet points) that explains an AWS architecture solution for the given case study.
+
+The answer should:
+
+Sound human and natural, like a good student, not marketing or documentation
+
+Be clear but concise, around 1–2 short paragraphs
+
+Explain what services are used and why, focusing on trade-offs
+
+Prioritize low operational overhead, cost efficiency, and scalability
+
+Use correct AWS service names, but avoid listing every feature
+
+Avoid buzzwords unless they clearly support the explanation
+
+Assume the grader values understanding and reasoning, not memorization.
+`;
+
 export const PROMPTS: Record<PromptMode, string> = {
   aws: AWS_EXAM_PROMPT,
   general: GENERAL_CLOUD_PROMPT,
+  caseStudy: CASE_STUDY_PROMPT,
 };
 
 export function buildPrompt(selectedText: string): string {
@@ -111,4 +132,12 @@ export function buildPrompt(selectedText: string): string {
 ${selectedText}
 
 Correct answer(s):`;
+}
+
+export function buildCaseStudyPrompt(selectedText: string): string {
+  return `Case Study:
+
+${selectedText}
+
+Answer:`;
 }

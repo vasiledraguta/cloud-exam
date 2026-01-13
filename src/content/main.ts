@@ -1,6 +1,11 @@
 import { generateWithGoogle, isGoogleConfigured } from "./providers/google";
 import { generateWithOpenAI, isOpenAIConfigured } from "./providers/openai";
-import { PROMPTS, PromptMode, buildPrompt } from "./prompts";
+import {
+  PROMPTS,
+  PromptMode,
+  buildPrompt,
+  buildCaseStudyPrompt,
+} from "./prompts";
 import "./style.css";
 
 type Provider = "openai" | "google";
@@ -76,7 +81,12 @@ async function generateAnswer(text: string): Promise<string> {
     return "No API key configured. Set VITE_OPENAI_API_KEY or VITE_GOOGLE_AI_API_KEY in .env";
   }
 
-  const prompt = buildPrompt(text);
+  let prompt = "";
+  if (promptMode === "caseStudy") {
+    prompt = buildCaseStudyPrompt(text);
+  } else {
+    prompt = buildPrompt(text);
+  }
   const systemPrompt = PROMPTS[promptMode];
 
   try {
@@ -101,9 +111,22 @@ document.addEventListener("keydown", async (event) => {
       return;
     }
 
-    showAnswer("", true);
-    const answer = await generateAnswer(text);
-    showAnswer(answer);
+    const promptMode = await getPromptMode();
+    if (promptMode === "caseStudy") {
+      showAnswer("Thinking about the case study...", true);
+      const answer = await generateAnswer(text);
+      try {
+        await navigator.clipboard.writeText(answer);
+        showAnswer("Case study answer generated");
+      } catch (error) {
+        console.error("[cloud-exam] Error copying answer to clipboard:", error);
+        showAnswer("Error: Could not copy answer to clipboard");
+      }
+    } else {
+      showAnswer("", true);
+      const answer = await generateAnswer(text);
+      showAnswer(answer);
+    }
   }
 
   if (event.key === "Escape") {

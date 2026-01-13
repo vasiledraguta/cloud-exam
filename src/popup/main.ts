@@ -1,7 +1,7 @@
 import "./style.css";
 
 type Provider = "openai" | "google";
-type PromptMode = "aws" | "general";
+type PromptMode = "aws" | "general" | "caseStudy";
 
 const app = document.querySelector("#app")!;
 
@@ -13,6 +13,7 @@ app.innerHTML = `
     <div class="setting-options">
       <button class="setting-btn" data-prompt="aws">AWS Exam</button>
       <button class="setting-btn" data-prompt="general">General Cloud</button>
+      <button class="setting-btn" data-prompt="caseStudy">Case Study</button>
     </div>
   </div>
   
@@ -80,7 +81,7 @@ promptButtons.forEach((btn) => {
     chrome.storage.sync.set({ promptMode: mode }, () => {
       setActivePromptMode(mode);
       showStatus(
-        `Using ${mode === "aws" ? "AWS Exam" : "General Cloud"} mode`,
+        `Using ${mode === "aws" ? "AWS Exam" : mode === "general" ? "General Cloud" : "Case Study"} mode`,
         true
       );
     });
