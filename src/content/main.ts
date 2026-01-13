@@ -1,12 +1,8 @@
 import { generateWithGoogle, isGoogleConfigured } from "./providers/google";
 import { generateWithOpenAI, isOpenAIConfigured } from "./providers/openai";
-import {
-  PROMPTS,
-  PromptMode,
-  Provider,
-  buildPrompt,
-  buildCaseStudyPrompt,
-} from "./prompts";
+import { PROMPTS } from "./prompts";
+import type { Keybind, PromptMode, Provider } from "./types";
+import { DEFAULT_KEYBIND, buildPrompt, buildCaseStudyPrompt } from "./utils";
 import "./style.css";
 
 const ANSWER_DISPLAY_TIMEOUT = 10000;
@@ -37,6 +33,24 @@ async function getPromptMode(): Promise<PromptMode> {
       resolve((result.promptMode as PromptMode) || "general");
     });
   });
+}
+
+async function getKeybind(): Promise<Keybind> {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get("keybind", (result) => {
+      resolve((result.keybind as Keybind) || DEFAULT_KEYBIND);
+    });
+  });
+}
+
+function matchesKeybind(event: KeyboardEvent, keybind: Keybind): boolean {
+  const keyMatches = event.key.toLowerCase() === keybind.key.toLowerCase();
+  const ctrlMatches = event.ctrlKey === keybind.ctrlKey;
+  const metaMatches = event.metaKey === keybind.metaKey;
+  const altMatches = event.altKey === keybind.altKey;
+  const shiftMatches = event.shiftKey === keybind.shiftKey;
+
+  return keyMatches && ctrlMatches && metaMatches && altMatches && shiftMatches;
 }
 
 function getSelectionText(): string {
@@ -105,7 +119,9 @@ async function generateAnswer(
 }
 
 document.addEventListener("keydown", async (event) => {
-  if (event.key === "k" && (event.ctrlKey || event.metaKey)) {
+  const keybind = await getKeybind();
+
+  if (matchesKeybind(event, keybind)) {
     event.preventDefault();
 
     const text = getSelectionText();

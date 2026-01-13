@@ -1,16 +1,4 @@
-export type PromptMode = "aws" | "general" | "caseStudy";
-export type Provider = "openai" | "google";
-
-export const MODE_LABELS: Record<PromptMode, string> = {
-  aws: "AWS Exam",
-  general: "General Cloud",
-  caseStudy: "Case Study",
-};
-
-export const PROVIDER_LABELS: Record<Provider, string> = {
-  openai: "OpenAI",
-  google: "Google",
-};
+import type { PromptMode } from "./types";
 
 export const AWS_EXAM_PROMPT = `You are an AWS Solutions Architect expert helping with a cloud computing lab exam.
 
@@ -130,19 +118,3 @@ export const PROMPTS: Record<PromptMode, string> = {
   general: GENERAL_CLOUD_PROMPT,
   caseStudy: CASE_STUDY_PROMPT,
 };
-
-export function buildPrompt(selectedText: string): string {
-  return `Exam Question:
-
-${selectedText}
-
-Correct answer(s):`;
-}
-
-export function buildCaseStudyPrompt(selectedText: string): string {
-  return `Case Study:
-
-${selectedText}
-
-Answer:`;
-}

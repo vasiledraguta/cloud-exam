@@ -103,3 +103,64 @@ h1 {
   font-size: 11px;
   color: #e4e4e7;
 }
+
+.keybind-recorder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+}
+
+.keybind-display {
+  flex: 1;
+  padding: 6px 10px;
+  background: #3f3f46;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.keybind-btn {
+  padding: 6px 12px;
+  border: 1px solid #3f3f46;
+  border-radius: 4px;
+  background: #3f3f46;
+  color: #a1a1aa;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.keybind-btn:hover {
+  background: #52525b;
+  color: #e4e4e7;
+}
+
+.keybind-recorder.recording {
+  border-color: #3b82f6;
+  background: #1e3a5f;
+}
+
+.keybind-recorder.recording .keybind-display {
+  background: #2563eb;
+  color: #fff;
+}
+
+.keybind-recorder.recording .keybind-btn {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+.keybind-recorder.recording .keybind-btn:hover {
+  background: #2563eb;
+}
