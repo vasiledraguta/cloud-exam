@@ -1,0 +1,1198 @@
+[
+  {
+    "question": "Related to users access and permissions for infrastructure security, confidentiality enforces:",
+    "answers": [
+      {
+        "statement": "encryption",
+        "correct": true
+      },
+      {
+        "statement": "usage of password vaults",
+        "correct": false
+      },
+      {
+        "statement": "two factor authentication",
+        "correct": false
+      },
+      {
+        "statement": "saving data only in private clouds",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which are the main cloud deployment models?",
+    "answers": [
+      {
+        "statement": "Public",
+        "correct": true
+      },
+      {
+        "statement": "Private",
+        "correct": true
+      },
+      {
+        "statement": "Community",
+        "correct": true
+      },
+      {
+        "statement": "Hybrid",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What are containers useful for?",
+    "answers": [
+      {
+        "statement": "creating similar environments",
+        "correct": true
+      },
+      {
+        "statement": "quickly provisioning dependencies locally",
+        "correct": true
+      },
+      {
+        "statement": "keeping computer clean",
+        "correct": true
+      },
+      {
+        "statement": "keeping dependencies isolated from the application",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following represent types of load balancers?",
+    "answers": [
+      {
+        "statement": "HTTP",
+        "correct": true
+      },
+      {
+        "statement": "TCP/UDP",
+        "correct": true
+      },
+      {
+        "statement": "DNS",
+        "correct": true
+      },
+      {
+        "statement": "NAT",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is not an application security process/technique?",
+    "answers": [
+      {
+        "statement": "runtime checking",
+        "correct": true
+      },
+      {
+        "statement": "input validation",
+        "correct": false
+      },
+      {
+        "statement": "encryption",
+        "correct": false
+      },
+      {
+        "statement": "authentication",
+        "correct": false
+      },
+      {
+        "statement": "authorization",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Why would be concerned with the API design in the context of the cloud?",
+    "answers": [
+      {
+        "statement": "Because SaaS products, which are growing in popularity, usually offer APIs",
+        "correct": true
+      },
+      {
+        "statement": "Because the microservices architecture is adopted more frequently",
+        "correct": true
+      },
+      {
+        "statement": "Because cloud systems work best with REST APIs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Monitoring of the virtual host is useful to ensure:",
+    "answers": [
+      {
+        "statement": "if provider respects contracts (SLA)",
+        "correct": true
+      },
+      {
+        "statement": "knowing when to scale (up/down, in/out)",
+        "correct": true
+      },
+      {
+        "statement": "knowing your current price to pay",
+        "correct": false
+      },
+      {
+        "statement": "knowing the size of the database",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Packet mirroring in cloud network can be useful for:",
+    "answers": [
+      {
+        "statement": "security analysis",
+        "correct": true
+      },
+      {
+        "statement": "bug testing",
+        "correct": true
+      },
+      {
+        "statement": "anomaly detection",
+        "correct": true
+      },
+      {
+        "statement": "boosting traffic performance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "OpenID Connect is a(n):",
+    "answers": [
+      {
+        "statement": "Authentication protocol built on top of OAuth 2.0",
+        "correct": true
+      },
+      {
+        "statement": "SSO protocol",
+        "correct": false
+      },
+      {
+        "statement": "Authorization protocol built on top of OAuth 2.0",
+        "correct": false
+      },
+      {
+        "statement": "Inter-service communication protocol",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Among the techniques for achieving high availability are:",
+    "answers": [
+      {
+        "statement": "multi region",
+        "correct": true
+      },
+      {
+        "statement": "multi availability zones",
+        "correct": true
+      },
+      {
+        "statement": "floating/elastic IP",
+        "correct": true
+      },
+      {
+        "statement": "real time operating system",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which are two effective measures to improve infrastructure security?",
+    "answers": [
+      {
+        "statement": "MFA for the development team",
+        "correct": true
+      },
+      {
+        "statement": "Reduce the attack surface as much as possible",
+        "correct": true
+      },
+      {
+        "statement": "Implement OAuth 2.0",
+        "correct": false
+      },
+      {
+        "statement": "MFA for the users",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following represent HTTP safe methods?",
+    "answers": [
+      {
+        "statement": "GET",
+        "correct": true
+      },
+      {
+        "statement": "HEAD",
+        "correct": true
+      },
+      {
+        "statement": "PATCH",
+        "correct": false
+      },
+      {
+        "statement": "POST",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Why would you consider GraphQL instead of REST?",
+    "answers": [
+      {
+        "statement": "Because we can specify which fields to fetch leading to lower data usage",
+        "correct": true
+      },
+      {
+        "statement": "Because it has built in introspection",
+        "correct": true
+      },
+      {
+        "statement": "Because it scales better",
+        "correct": false
+      },
+      {
+        "statement": "Because it is easier to cache",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "OAuth 2.0 is a(n):",
+    "answers": [
+      {
+        "statement": "Authorization protocol",
+        "correct": true
+      },
+      {
+        "statement": "User management service",
+        "correct": false
+      },
+      {
+        "statement": "Multi-factor authentication service",
+        "correct": false
+      },
+      {
+        "statement": "Authentication protocol",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which two options of the following could be considered identity providers (IdP)?",
+    "answers": [
+      {
+        "statement": "Social platforms such as Facebook and Google",
+        "correct": true
+      },
+      {
+        "statement": "Custom built OpenID Connect systems",
+        "correct": true
+      },
+      {
+        "statement": "SaaS services",
+        "correct": false
+      },
+      {
+        "statement": "Resource Servers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The relationship between TLS and SSL is:",
+    "answers": [
+      {
+        "statement": "TLS is the successor of SSL",
+        "correct": true
+      },
+      {
+        "statement": "TLS is built on top of SSL",
+        "correct": false
+      },
+      {
+        "statement": "TLS handles communication while SSL handles identity verification",
+        "correct": false
+      },
+      {
+        "statement": "They are not related",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is the availability formula used in cloud environments?",
+    "answers": [
+      {
+        "statement": "availability=uptime/(downtime+uptime)",
+        "correct": true
+      },
+      {
+        "statement": "availability=uptime/downtime+uptime",
+        "correct": false
+      },
+      {
+        "statement": "availability=uptime/uptime+downtime",
+        "correct": false
+      },
+      {
+        "statement": "availability=uptime/downtime",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Virtual CPUs might be:",
+    "answers": [
+      {
+        "statement": "timeshares of real CPU core",
+        "correct": true
+      },
+      {
+        "statement": "physical core",
+        "correct": true
+      },
+      {
+        "statement": "logical core",
+        "correct": true
+      },
+      {
+        "statement": "first thread of each core",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When can a service be considered serverless?",
+    "answers": [
+      {
+        "statement": "When you don't have to setup any infrastructure",
+        "correct": true
+      },
+      {
+        "statement": "When you don't have to provision capacity",
+        "correct": true
+      },
+      {
+        "statement": "When you pay only for what you use",
+        "correct": true
+      },
+      {
+        "statement": "When the service can scale down to 0",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A resilient system is one that is:",
+    "answers": [
+      {
+        "statement": "adaptive",
+        "correct": true
+      },
+      {
+        "statement": "self healing",
+        "correct": true
+      },
+      {
+        "statement": "predictable",
+        "correct": true
+      },
+      {
+        "statement": "self contained",
+        "correct": false
+      },
+      {
+        "statement": "self managed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Asymmetric encryption is suited for:",
+    "answers": [
+      {
+        "statement": "Small payloads",
+        "correct": true
+      },
+      {
+        "statement": "Digital signatures (identity verification)",
+        "correct": true
+      },
+      {
+        "statement": "High-performance compute",
+        "correct": false
+      },
+      {
+        "statement": "Large payloads",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In which case is a streaming service more suitable than a queue?",
+    "answers": [
+      {
+        "statement": "When we might want to replay previous messages/events",
+        "correct": true
+      },
+      {
+        "statement": "When we want to reduce the load on the clients",
+        "correct": false
+      },
+      {
+        "statement": "When we don't want to store messages",
+        "correct": false
+      },
+      {
+        "statement": "When it's enough if the message is processed by at least one client",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the optimal approach for the least privilege principle when admin rights are required?",
+    "answers": [
+      {
+        "statement": "Leverage features that enable just-in-time privileges",
+        "correct": true
+      },
+      {
+        "statement": "Create a dedicated admin user used only when needed",
+        "correct": false
+      },
+      {
+        "statement": "Enable MFA",
+        "correct": false
+      },
+      {
+        "statement": "Relax the security policies when needed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Why are serverless databases usually NoSQL?",
+    "answers": [
+      {
+        "statement": "Because NoSQL databases usually scale better",
+        "correct": true
+      },
+      {
+        "statement": "Because NoSQL databases are simpler (e.g. no ACID)",
+        "correct": true
+      },
+      {
+        "statement": "Due to licensing limitations of SQL databases",
+        "correct": false
+      },
+      {
+        "statement": "Because data is non-relational in most cases anyway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the correct order complexity wise in decreasing order for NoSQL database models?",
+    "answers": [
+      {
+        "statement": "graph, columnar, document, key-value",
+        "correct": true
+      },
+      {
+        "statement": "document, columnar, key-value, graph",
+        "correct": false
+      },
+      {
+        "statement": "graph, document, columnar, key-value",
+        "correct": false
+      },
+      {
+        "statement": "key-value, document, columnar, graph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The role of the hypervisor is to:",
+    "answers": [
+      {
+        "statement": "create and manage guest machines",
+        "correct": true
+      },
+      {
+        "statement": "translate and limit instructions",
+        "correct": true
+      },
+      {
+        "statement": "manage users",
+        "correct": false
+      },
+      {
+        "statement": "encrypt disk",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a cloud environment horizontal scaling means that:",
+    "answers": [
+      {
+        "statement": "it can scale infinitely",
+        "correct": true
+      },
+      {
+        "statement": "it requires load balancers",
+        "correct": true
+      },
+      {
+        "statement": "it is compatible with any application architecture",
+        "correct": false
+      },
+      {
+        "statement": "it modifies existing VMs",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following is not an Integration Service for cloud?",
+    "answers": [
+      {
+        "statement": "shared memory",
+        "correct": true
+      },
+      {
+        "statement": "API Gateways",
+        "correct": false
+      },
+      {
+        "statement": "publish/subscribe services",
+        "correct": false
+      },
+      {
+        "statement": "workflow services",
+        "correct": false
+      },
+      {
+        "statement": "queues",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "When choosing cloud services, the price plan can be:",
+    "answers": [
+      {
+        "statement": "Fixed",
+        "correct": true
+      },
+      {
+        "statement": "Tiered",
+        "correct": true
+      },
+      {
+        "statement": "Dynamic",
+        "correct": true
+      },
+      {
+        "statement": "Transaction-based",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What characterizes resource-oriented APIs?",
+    "answers": [
+      {
+        "statement": "Usually leads to a concise set of operations",
+        "correct": true
+      },
+      {
+        "statement": "The behavior of the system is primarily driven by the data",
+        "correct": true
+      },
+      {
+        "statement": "Fits better for public APIs",
+        "correct": true
+      },
+      {
+        "statement": "Usually leads to strong coupling",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following components are not managed by the cloud provider in a Infrastructure as a Service model?",
+    "answers": [
+      {
+        "statement": "Application",
+        "correct": true
+      },
+      {
+        "statement": "Data",
+        "correct": true
+      },
+      {
+        "statement": "Operating System",
+        "correct": true
+      },
+      {
+        "statement": "Storage",
+        "correct": false
+      },
+      {
+        "statement": "Networking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What is the shared responsibility model?",
+    "answers": [
+      {
+        "statement": "A model describing the responsibility of the cloud provider and the customer with regards to security",
+        "correct": true
+      },
+      {
+        "statement": "A framework for finding out the optimal security approach",
+        "correct": false
+      },
+      {
+        "statement": "A model describing the responsibility within a development team",
+        "correct": false
+      },
+      {
+        "statement": "A requirement for the ISO 27001 standard",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following are HTTP idempotent methods?",
+    "answers": [
+      {
+        "statement": "GET",
+        "correct": true
+      },
+      {
+        "statement": "HEAD",
+        "correct": true
+      },
+      {
+        "statement": "DELETE",
+        "correct": true
+      },
+      {
+        "statement": "PUT",
+        "correct": true
+      },
+      {
+        "statement": "POST",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Why is loose coupling beneficial?",
+    "answers": [
+      {
+        "statement": "Facilitates better maintainability and extensibility",
+        "correct": true
+      },
+      {
+        "statement": "Usually makes the system more scalable",
+        "correct": false
+      },
+      {
+        "statement": "Improves network performance",
+        "correct": false
+      },
+      {
+        "statement": "We should prefer strong coupling instead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The 12 Factor App is a(n)",
+    "answers": [
+      {
+        "statement": "Methodology for building scalable and maintainable software",
+        "correct": true
+      },
+      {
+        "statement": "Authentication application",
+        "correct": false
+      },
+      {
+        "statement": "Framework for building microservices",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following are protocols used by the internet?",
+    "answers": [
+      {
+        "statement": "IP",
+        "correct": true
+      },
+      {
+        "statement": "BGP",
+        "correct": true
+      },
+      {
+        "statement": "RIP",
+        "correct": true
+      },
+      {
+        "statement": "OSPF",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "What are CDNs good for?",
+    "answers": [
+      {
+        "statement": "improve load times",
+        "correct": true
+      },
+      {
+        "statement": "optimize costs",
+        "correct": true
+      },
+      {
+        "statement": "improve security",
+        "correct": true
+      },
+      {
+        "statement": "reduce resources",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following characteristics is improved by designing and building applications in cloud environments?",
+    "answers": [
+      {
+        "statement": "Scalability",
+        "correct": true
+      },
+      {
+        "statement": "Security",
+        "correct": true
+      },
+      {
+        "statement": "Cost Efficiency",
+        "correct": true
+      },
+      {
+        "statement": "Productivity",
+        "correct": true
+      },
+      {
+        "statement": "Availability",
+        "correct": true
+      },
+      {
+        "statement": "Control",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Infrastructure security is concerned with:",
+    "answers": [
+      {
+        "statement": "cloud user",
+        "correct": true
+      },
+      {
+        "statement": "application user",
+        "correct": false
+      },
+      {
+        "statement": "operating system user",
+        "correct": false
+      },
+      {
+        "statement": "database user",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "From the kubernetes terminology, we can say that a pod:",
+    "answers": [
+      {
+        "statement": "is the smallest deployment unit",
+        "correct": true
+      },
+      {
+        "statement": "runs one or more containers",
+        "correct": true
+      },
+      {
+        "statement": "can span multiple nodes",
+        "correct": false
+      },
+      {
+        "statement": "is managed by the operating system",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which are some common concerns when working with queues?",
+    "answers": [
+      {
+        "statement": "Messages might be out of order",
+        "correct": true
+      },
+      {
+        "statement": "The same message might be delivered multiple times",
+        "correct": true
+      },
+      {
+        "statement": "The message is lost if there are no consumers",
+        "correct": false
+      },
+      {
+        "statement": "The consumers might get overloaded",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Cloud network security can be enforced by:",
+    "answers": [
+      {
+        "statement": "firewalls",
+        "correct": true
+      },
+      {
+        "statement": "network access control lists",
+        "correct": true
+      },
+      {
+        "statement": "domain name servers",
+        "correct": false
+      },
+      {
+        "statement": "gateways",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which are some of the concerns when adopting a serverless architecture?",
+    "answers": [
+      {
+        "statement": "You might not have enough control",
+        "correct": true
+      },
+      {
+        "statement": "Your system might overload other dependencies",
+        "correct": true
+      },
+      {
+        "statement": "Your system might not be able to handle big workloads",
+        "correct": false
+      },
+      {
+        "statement": "It will likely be more expensive than IaaS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which of the following represent possible type of consistency in cloud database models?",
+    "answers": [
+      {
+        "statement": "strong consistency",
+        "correct": true
+      },
+      {
+        "statement": "eventual consistency",
+        "correct": true
+      },
+      {
+        "statement": "tunable consistency",
+        "correct": true
+      },
+      {
+        "statement": "no consistency",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which are the 2 main API styles?",
+    "answers": [
+      {
+        "statement": "Procedure Oriented",
+        "correct": true
+      },
+      {
+        "statement": "Entity Oriented",
+        "correct": true
+      },
+      {
+        "statement": "Graph",
+        "correct": false
+      },
+      {
+        "statement": "REST",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a cloud environment, vertical scalability means that:",
+    "answers": [
+      {
+        "statement": "it doesn't require additional components",
+        "correct": true
+      },
+      {
+        "statement": "it might be the only approach for certain components (RDBMS)",
+        "correct": true
+      },
+      {
+        "statement": "it is compatible only with stateless applications",
+        "correct": false
+      },
+      {
+        "statement": "it doesn't require restarting the service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is the correct order for disaster recovery strategies from cheapest to the most expensive?",
+    "answers": [
+      {
+        "statement": "backup and restore, pilot light, warm standby, hot site",
+        "correct": true
+      },
+      {
+        "statement": "warm standby, hot site, pilot light, backup and restore",
+        "correct": false
+      },
+      {
+        "statement": "backup and restore, warm standby, hot site, pilot light",
+        "correct": false
+      },
+      {
+        "statement": "warm standby, hot site, backup and restore, pilot light",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which is true for a graph database model?",
+    "answers": [
+      {
+        "statement": "contains nodes and relationships",
+        "correct": true
+      },
+      {
+        "statement": "nodes contain properties (key-value pairs)",
+        "correct": true
+      },
+      {
+        "statement": "relationships can't contain properties",
+        "correct": false
+      },
+      {
+        "statement": "relationships are not directed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which three options of the following are valid OAuth 2.0 flows?",
+    "answers": [
+      {
+        "statement": "Authorization Code",
+        "correct": true
+      },
+      {
+        "statement": "Resource Owner Password Credentials",
+        "correct": true
+      },
+      {
+        "statement": "Authorization Code with PKCE",
+        "correct": true
+      },
+      {
+        "statement": "Owner Claim",
+        "correct": false
+      },
+      {
+        "statement": "Pass-through Hash",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "What makes a system highly available?",
+    "answers": [
+      {
+        "statement": "hardware",
+        "correct": true
+      },
+      {
+        "statement": "software",
+        "correct": true
+      },
+      {
+        "statement": "data",
+        "correct": true
+      },
+      {
+        "statement": "network",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "FaaS stands for:",
+    "answers": [
+      {
+        "statement": "Functions as a service",
+        "correct": true
+      },
+      {
+        "statement": "Frontend as a service",
+        "correct": false
+      },
+      {
+        "statement": "Functionality as a service",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How are messages retrieved from queues in comparison to pub/sub systems?",
+    "answers": [
+      {
+        "statement": "The client has the pull the messages from queues while pub/sub pushes the messages to the client",
+        "correct": true
+      },
+      {
+        "statement": "The clients pull messages from both types of services",
+        "correct": false
+      },
+      {
+        "statement": "The client has the pull the messages from pub/sub while queues push the messages to the client",
+        "correct": false
+      },
+      {
+        "statement": "Both types of services push the message to the clients",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "The CAP theorem referres to:",
+    "answers": [
+      {
+        "statement": "Consistency, Availability, Partition Tolerance",
+        "correct": true
+      },
+      {
+        "statement": "Capacity, Availability, Performance",
+        "correct": false
+      },
+      {
+        "statement": "Credibility, Accessibility, Performance",
+        "correct": false
+      },
+      {
+        "statement": "Credibility, Accessibility, Partition Tolerance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Some of the load balancers features are:",
+    "answers": [
+      {
+        "statement": "caching",
+        "correct": true
+      },
+      {
+        "statement": "routing based on path",
+        "correct": true
+      },
+      {
+        "statement": "port mapping",
+        "correct": true
+      },
+      {
+        "statement": "health checks",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A key-value database offers:",
+    "answers": [
+      {
+        "statement": "high and consistent throughput",
+        "correct": true
+      },
+      {
+        "statement": "ultra low and consistent latency",
+        "correct": true
+      },
+      {
+        "statement": "ultra low but not consistent latency",
+        "correct": false
+      },
+      {
+        "statement": "high but not consistent throughput",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In a cloud environment the role of a load balancer is to:",
+    "answers": [
+      {
+        "statement": "balance traffic across multiple targets",
+        "correct": true
+      },
+      {
+        "statement": "A/B testing",
+        "correct": true
+      },
+      {
+        "statement": "serve as a single point of entry",
+        "correct": true
+      },
+      {
+        "statement": "monitor the health of target resources",
+        "correct": true
+      }
+    ]
+  }
+]
