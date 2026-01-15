@@ -105,7 +105,7 @@ Write a single, coherent answer text (not bullet points) that explains an AWS ar
 
 The answer should:
 - Sound human and natural, like a good student, not marketing or documentation
-- Be clear but concise, around 1–2 short paragraphs
+- Be clear but concise, around 3-4 short paragraphs
 - Explain what services are used and why, focusing on trade-offs
 - Prioritize low operational overhead, cost efficiency, and scalability
 - Use correct AWS service names, but avoid listing every feature
